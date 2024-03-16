@@ -9,7 +9,7 @@ const Header = () => {
   const typingSearch = useRef(null as any);
 
   const onGetListMoviesNowPlaying = () => {
-    dispatch(getListNowPlayingAction({ language: 'en- US', page: 1 }))
+    dispatch(getListNowPlayingAction({ language: 'en-US', page: 1 }))
   }
   const onGetListMoviesTopRating = () => {
     dispatch(getListTopRatedAction({ language: 'en-US', page: 1 }))

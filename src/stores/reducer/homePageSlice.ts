@@ -129,9 +129,7 @@ const homePageSlice = createSlice({
           state.detailMoviesState.single = action.payload.results;
         }
       )
-      .addCase(getDetailMovieAction.rejected, (state) => {
-  
-        state.listMoviesState.requesting = false;
+      .addCase(getDetailMovieAction.rejected, () => {
         notificationHelper.error({ description: 'Error nè' });
       })
   },

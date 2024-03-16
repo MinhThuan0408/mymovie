@@ -1,7 +1,7 @@
 
 import {
   LIST_ROUTES_HOME,
-} from '@/routes';
+} from '../routes';
 
 export interface IRoutes {
   path: string;

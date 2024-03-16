@@ -25,7 +25,7 @@ const DetailMoviePage = () => {
       const str = id.split('-')
 
 
-      dispatch(getDetailMovieAction({ language: 'en- US', movie_id: parseInt(str[0]) }))
+      dispatch(getDetailMovieAction({ language: 'en-US', movie_id: parseInt(str[0]) }))
 
       const url = 'https://api.themoviedb.org/3/movie/' + str[0] + '?language=en-US';
       const options = {
@@ -44,10 +44,7 @@ const DetailMoviePage = () => {
   }, [id])
 
   return (
-    <>
-      <DetailMovie data={data!} />
-    </>
-
+    <DetailMovie data={data!} />
   )
 }
 
