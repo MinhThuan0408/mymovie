@@ -1,16 +1,19 @@
 import { IListMovies } from "@/models/HomePage";
 import { Link } from "react-router-dom";
 import CircleRating from "../component/CircleRating";
+import Loading from "../component/Loading";
 
 interface IHomeProps {
-  data: IListMovies[]
+  data: IListMovies[],
+  loading?: boolean
 }
 
 const Home = (props: IHomeProps) => {
-  const { data } = props
+  const { data, loading } = props
 
   return (
     <div className="list-movies">
+      {loading && <Loading />}
       {
         data && data.map((item: IListMovies, index: number) => {
           return (

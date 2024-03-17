@@ -35,8 +35,8 @@ const Header = () => {
       <div className="header__wrap">
         <ul>
           <li ><Link to={'/home'}>Home</Link></li>
-          <li onClick={onGetListMoviesNowPlaying}>Now playing</li>
-          <li onClick={onGetListMoviesTopRating}>Top rated</li>
+          <li onClick={onGetListMoviesNowPlaying}><Link to={'/home'}>Now playing</Link></li>
+          <li onClick={onGetListMoviesTopRating}><Link to={'/home'}>Top rated</Link></li>
         </ul>
         <div>
           <input type="text" placeholder="Search" onChange={onSearch} />

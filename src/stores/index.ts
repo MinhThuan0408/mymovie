@@ -1,7 +1,6 @@
 import { Action, configureStore } from '@reduxjs/toolkit';
 import { routerMiddleware } from 'connected-react-router';
-import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import { ThunkAction } from 'redux-thunk';
 import { history } from '../utils/history';
@@ -14,21 +13,11 @@ export enum keyReduxPersist {
 
 const sagaMiddleware = createSagaMiddleware();
 
-const persistConfig = {
-  key: keyReduxPersist.KEY,
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 export const store = configureStore({
-  // reducer: rootReducer,
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      // thunk: true,
       serializableCheck: false,
-      // immutableCheck: false,
     }).concat(sagaMiddleware, routerMiddleware(history)),
 });
 

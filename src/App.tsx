@@ -7,8 +7,6 @@ import { history } from './utils/history';
 
 function App() {
 
-  console.log(routes);
-
   return (
     <Router history={history}>
       <Header />
